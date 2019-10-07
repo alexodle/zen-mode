@@ -22,6 +22,6 @@ chrome.runtime.onInstalled.addListener(function() {
 chrome.pageAction.onClicked.addListener(function(tab) {
   // No tabs or host permissions needed!
   chrome.tabs.executeScript({
-    code: 'document.body.style.backgroundColor="red"'
+    code: 'document.getElementById("js--friends-widget").style.display = "none"'
   });
 });
