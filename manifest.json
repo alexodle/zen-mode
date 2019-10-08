@@ -3,8 +3,15 @@
   "name": "Zen Mode Extension for Learn.co",
   "version": "2.0",
   "description": "Removes distracting social features on the Learn.co lesson pages, allowing a more peaceful user experience.",
+  "icons": {
+      "16": "images/zen16.png",
+      "48": "images/zen48.png",
+      "128": "images/zen128.png"
+  },
+
   "permissions": [
     "declarativeContent",
+    "storage",
     "activeTab"
   ],
   "background": {
@@ -12,7 +19,11 @@
     "persistent": false
   },
   "page_action": {
-    "default_icon": "images/zen.png",
-    "default_title": "Switched to Zen Mode!"
+    "default_icon": {
+      "24": "images/zen24.png",
+      "32": "images/zen32.png",
+      "48": "images/zen48.png"
+    },
+    "default_popup": "popup.html"
   }
 }
