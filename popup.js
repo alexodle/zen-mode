@@ -1,27 +1,47 @@
-let setZen = document.getElementById('setZen');
-
-// chrome.storage.sync.get('checked', function(data) {
-//   setZen.checked = data.checked;
-// });
+let setSocial = document.getElementById('social');
+let setLesson = document.getElementById('lesson');
+let setQuestion = document.getElementById('question');
 
 
-setZen.addEventListener('click', function () {
-    //code here
-    if (setZen.checked) {
+setSocial.addEventListener('click', function () {
+
+    if (setSocial.checked) {
       chrome.tabs.executeScript(
-            { file: 'contentScript.js' }
-         )}
+            { file: 'contentScriptHide.js' }
+         )
+       }
     else {
       chrome.tabs.executeScript(
             { file: 'contentScriptDefault.js' }
          )}
 });
 
-// setZen.onclick = function() {
-//
-//  };
+setLesson.addEventListener('click', function () {
 
- // chrome.storage.sync.set({checked: setZen.checked, function() {
- //   console.log(`Zen Mode checked status is ` + setZen.checked);
- // }
- // });
+  if (setLesson.checked) {
+    chrome.tabs.executeScript(
+      { code: 'document.getElementById("js--region-sidebar-additional-content").style.display = "none"' }
+    )
+  }
+  else {
+    chrome.tabs.executeScript(
+      { code: 'document.getElementById("js--region-sidebar-additional-content").style.display = "block"' }
+    )
+  }
+
+});
+
+setQuestion.addEventListener('click', function () {
+
+  if (setQuestion.checked) {
+    chrome.tabs.executeScript(
+      { code: 'document.getElementsByClassName("site-sidebar__actions")[0].style.display = "none"' }
+    )
+  }
+  else {
+    chrome.tabs.executeScript(
+      { code: 'document.getElementsByClassName("site-sidebar__actions")[0].style.display = "flex"' }
+    )
+  }
+
+});
