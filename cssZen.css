@@ -1,0 +1,3 @@
+.bubble-bar__list, .bubble-bar__label, #js--friends-widget, #js--region-sidebar-additional-content, .site-sidebar__actions {
+  display: none !important;
+}

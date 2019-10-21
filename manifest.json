@@ -8,23 +8,11 @@
       "48": "images/zen48.png",
       "128": "images/zen128.png"
   },
-
-  "permissions": [
-    "declarativeContent",
-    "storage",
-    "activeTab"
-  ],
-
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
-  },
-  "page_action": {
-    "default_icon": {
-      "24": "images/zen24.png",
-      "32": "images/zen32.png",
-      "48": "images/zen48.png"
-    },
-    "default_popup": "popup.html"
-  }
+  "content_scripts": [
+    {
+      "matches": ["*://learn.co/*"],
+      "run_at": "document_idle",
+      "css": ["cssZen.css"]
+    }
+  ]
 }
