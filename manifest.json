@@ -15,6 +15,15 @@
     "activeTab"
   ],
 
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "matches": ["https://learn.co/*"],
+      "js": ["toggleContents.js"],
+      "css": ["hide.css"]
+    }
+  ],
+
   "background": {
     "scripts": ["background.js"],
     "persistent": false
