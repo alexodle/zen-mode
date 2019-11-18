@@ -5,24 +5,17 @@ function getStyle(selector, visible) {
 
 function withExistingStyleElement(cb) {
   let el = document.getElementById('zen-style');
-  if (el) {
-    cb(el);
-  }
-  return !!el;
+  if (!el) return false;
+  
+  cb(el);
+  return true;
 }
 
 function withNewStyleElement(cb) {
   const el = document.createElement('style');
   el.id = 'zen-style';
-
   cb(el);
-
-  const intId = setInterval(function () {
-    if (document.head) {
-      clearInterval(intId);
-      document.head.append(el);
-    }
-  }, 10);
+  document.head.append(el);
 }
 
 function withStyleElement(cb) {

@@ -19,8 +19,11 @@
     {
       "run_at": "document_start",
       "matches": ["https://learn.co/*"],
-      "js": ["toggleContents.js"],
       "css": ["hide.css"]
+    },
+    {
+      "matches": ["https://learn.co/*"],
+      "js": ["toggleContents.js"]
     }
   ],
 
